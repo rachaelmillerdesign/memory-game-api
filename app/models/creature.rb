@@ -2,6 +2,8 @@ require 'csv'
 
 class Creature < ApplicationRecord
   validates :common_name, uniqueness: :true
+  has_many :favorites
+  has_many :users, through: :favorites
   # def initialize(h)
   #   h.each_key do |key|
   #     instance_variable_set(('@' + key.to_s).to_sym, h[key])
