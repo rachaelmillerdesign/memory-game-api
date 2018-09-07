@@ -1,7 +1,7 @@
 require 'csv'
 
 csv_text = File.read('data/creature.csv')
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'UTF-8')
 csv.each do |row|
   Creature.create!(
 common_name: row['common_name'],
